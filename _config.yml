@@ -1,13 +1,12 @@
 # Site settings
-title: Clean
-email: your-email@domain.com
+title: 데이터분석 덕후라능
+email: pizza12333@naver.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml.
+  공부하며 정리하고 공유하는 블로그 라능 !!!!
 baseurl: "/blog/" # the subpath of your site, e.g. /blog/
 url: "http://pizza12333.github.io" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: 스바라시
+github_username:  스바라시
 
 # Build settings
 markdown: kramdown
