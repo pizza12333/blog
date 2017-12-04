@@ -1,80 +1,59 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-  {% include head.html %}
+<div class="home">
+  {% if site.theme_settings.header_text %}
+  <div id="main" class="call-out"
+  style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+    {{ site.theme_settings.header_text }}
+  </div>
+  {% endif %}
 
-  <body>
-
-    <div class="cover">
-      <div class="clock"></div>
-      <div class='hours'></div>
-      <div class='seconds'></div>
-      <div class='minutes'></div>
-      <div class="site-name">
-        <div class="site-name__inner">
-          <div class="name">{{ site.title }}</div>
-          <div class="desc">{{site.description}}</div>
-          <div class="btn">Blog</div>
-        </div>
+  <div class="posts">
+    {% for post in paginator.posts %}
+    <div class="post-teaser">
+      {% if post.thumbnail %} 
+      <div class="post-img">
+         <img src="{{ site.baseurl }}/{{ post.thumbnail }}">
       </div>
+      {% endif %}
+      <span>
+          <header>
+            <h1>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+              </a>
+            </h1>
+            <p class="meta">
+              {{ post.date | date: "%B %-d, %Y" }}
+            </p>
+          </header>
+          <div class="excerpt">
+            {{ post.content | strip_html | truncate: "250" }}
+            <!--<a class="button" href="{{ post.url | prepend: site.baseurl }}">
+              {{ site.theme_settings.str_continue_reading }}
+            </a>-->
+          </div>
+      </span>
     </div>
+    {% endfor %}
+  </div>
 
-    <header class="site-header">
-
-      <div class="wrapper">
-
-        <nav class="site-nav">
-            {% for page in site.pages %}
-              {% if page.title %}
-              <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-              {% endif %}
-            {% endfor %}
-        </nav>
-      </div>
-    </header>
-    <div class="page-content">
-        {{ content }}
-    </div>
-
-<script>
-  setInterval(function() {
-    var seconds = new Date().getSeconds();
-    var sdegree = seconds * 6 + 270;
-    seconds = ("0" + seconds).slice(-2);
-    var secondSel = document.querySelector(".seconds");
-
-    secondSel.style.transform = "rotate(" + sdegree + "deg) translate(160px) rotate(-" + sdegree + "deg)";
-    secondSel.innerHTML = seconds;
-
-    var minutes = new Date().getMinutes();
-    var mdegree = minutes * 6 + 270;
-    var minutesSel = document.querySelector(".minutes");
-    minutes = ("0" + minutes).slice(-2);
-
-    minutesSel.style.transform = "rotate(" + mdegree + "deg) translate(181px) rotate(-" + mdegree + "deg)";
-    minutesSel.innerHTML =  minutes;
-
-    var hours = new Date().getHours();
-    var hoursSel = document.querySelector(".hours");
-
-    if (hours > 12) {
-      hours = hours - 12;
-    }
-
-    hours = ("0" + hours).slice(-2);
-
-    hoursSel.innerHTML = hours;
-  }, 1000);
-
-  var btnSel = document.querySelector('.btn');
-  var header = document.getElementsByTagName('header')[0];
-
-  btnSel.addEventListener("click", function() {
-    header.scrollIntoView();
-  }, false);
-
-</script>
-
-  </body>
-
-</html>
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      {{ site.theme_settings.str_previous_page }}
+    </a>
+    {% endif %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
+      {{ site.theme_settings.str_next_page }}
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
