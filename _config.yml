@@ -7,10 +7,10 @@
 title: 모야메롱다!
 subtitle: @Hello @Data-Analysis @Machine-Learning @Deep-Learning @World!
 description: 데이터분석을 공부한 내용을 공유하는 블로그입니다.
-author: 익명의 게임 데이터분석가
+author: 익명의 게임분석가
 # original author is John Doe! 
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: ko
 date_format: '%Y-%m-%d'
 
 # URL
@@ -87,7 +87,7 @@ keywords: "Jekyll, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
