@@ -1,9 +1,9 @@
 ---
-title: Next Theme Tutorial
-description: NexT is a high quality elegant Jekyll theme ported from Hexo Next. It is crafted from scratch, with love.
+title: 테스트 포스트
+description: =]
 categories:
- - tutorial
-tags:
+ - 테스트 태그
+tags: Kaggle
 ---
 
 > NexT is a high quality elegant [Jekyll](https://jekyllrb.com) theme ported from [Hexo Next](https://github.com/iissnan/hexo-theme-next). It is crafted from scratch, with love.
