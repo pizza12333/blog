@@ -4,11 +4,10 @@
 # ---------------------------------------------------------------
 
 # Site
-title: Hello DS!
-subtitle: Hello DS
-description: @Hello @Data-Analysis @Machine-Learning @Deep-Learning @World!
-데이터분석, 머신러닝, 딥러닝을 공부하고 공유하는 블로그입니다.
-author: 이...익명!!
+title: "Hello DS!"
+subtitle: "Hello DS"
+description:
+author: "이...익명!!"
 # original author is John Doe! 
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
