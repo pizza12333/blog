@@ -62,7 +62,6 @@ int main()
 }
 ```
 
-'''python
-
+```python
 print("hello world!")
 ```
