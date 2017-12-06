@@ -1,4 +1,6 @@
 
+<section id="posts" class="posts-expand">
+  
 {% comment %} list_categories(paginator, prev_text, next_text) {% endcomment %}
 {% capture list_categories %}
   <ul class="category-list">
@@ -16,7 +18,6 @@
 <br><br>
 <hr>
 
-<section id="posts" class="posts-expand">
   {% for post in posts %}
     {% assign is_index = true %}
     {% include _macro/post.html %}
